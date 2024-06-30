@@ -98,13 +98,13 @@ class _ContentScreenState extends State<ContentScreen> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
+            DrawerHeader(
+              decoration: const BoxDecoration(
                 color: Color(0xff191825),
               ),
               child: Text(
-                'Lessons',
-                style: TextStyle(
+                widget.courseTitle,
+                style: const TextStyle(
                   color: Color(0xff865DFF),
                   fontSize: 30,
                 ),
@@ -135,7 +135,7 @@ class ModuleTile extends StatelessWidget {
   final List<String> lessons;
   final String courseTitle;
 
-  ModuleTile({
+  const ModuleTile({
     super.key,
     required this.modNum,
     required this.title,
@@ -197,7 +197,8 @@ class _LessonTileState extends State<LessonTile> {
               """Generate ${widget.lessonName} comprehensively for the ${widget.courseTitle} online course in ${widget.title}. 
               If applicable, include an exercise or challenge.
               Please ensure that your response is as informative about the topic as possible. 
-              If the topic is about programming, you may use code samples.""");
+              If the topic is about programming, you may use code samples.
+              Do not make any mention of past or future lessons.""");
           _isLoading = true; // Start loading
         });
 
