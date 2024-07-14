@@ -194,11 +194,11 @@ class _LessonTileState extends State<LessonTile> {
       onTap: () async {
         setState(() {
           print(
-              """Generate ${widget.lessonName} comprehensively for the ${widget.courseTitle} online course in ${widget.title}. 
+              """Generate '${widget.lessonName}' comprehensively for the ${widget.courseTitle} online course in '${widget.title}'. 
               If applicable, include an exercise or challenge.
               Please ensure that your response is as informative about the topic as possible. 
               If the topic is about programming, you may use code samples.
-              Do not make any mention of past or future lessons.""");
+              Do not mention past or future lessons.""");
           _isLoading = true; // Start loading
         });
 

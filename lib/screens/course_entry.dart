@@ -20,6 +20,13 @@ class _CourseEntryState extends State<CourseEntry>
   late Animation animation;
   bool showSpinner = false;
 
+  // static const List<Widget> _widgetOptions = <Widget>[
+  //   ContentScreen(),
+  //   RandomWordScreen(),
+  //   SearchScreen(),
+  //   SavedScreen(),
+  // ];
+
   @override
   void initState() {
     super.initState();
@@ -38,6 +45,13 @@ class _CourseEntryState extends State<CourseEntry>
     });
   }
 
+  int _selectedIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final EdgeInsets padding = MediaQuery.of(context).viewInsets;
@@ -45,6 +59,34 @@ class _CourseEntryState extends State<CourseEntry>
     return ModalProgressHUD(
       inAsyncCall: showSpinner,
       child: Scaffold(
+        // // body: _widgetOptions.elementAt(_selectedIndex),
+        // bottomNavigationBar: BottomNavigationBar(
+        //   type: BottomNavigationBarType.fixed,
+        //   items: const <BottomNavigationBarItem>[
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.calendar_today),
+        //       label: 'Word of the Day',
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.shuffle),
+        //       label: 'Random Word',
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.search),
+        //       label: 'Search',
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.save),
+        //       label: 'Saved Words', // This is your new navigation item
+        //     ),
+        //   ],
+        //   currentIndex: _selectedIndex,
+        //   selectedItemColor: const Color(0xffff00d0),
+        //   unselectedItemColor: Colors.white,
+        //   onTap: _onItemTapped,
+        //   backgroundColor: const Color(0xff3C0753),
+        // ),
+
         // backgroundColor: const Color(0xff191825),
         backgroundColor: animation.value,
 
@@ -74,7 +116,7 @@ class _CourseEntryState extends State<CourseEntry>
                 padding: const EdgeInsets.only(bottom: 25),
                 child: Center(
                   child: Image.asset(
-                    'images/newSphere.png',
+                    'images/newSphere2.png',
                     height: 200,
                   ),
                 ),
