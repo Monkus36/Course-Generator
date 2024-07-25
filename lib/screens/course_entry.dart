@@ -142,8 +142,6 @@ class _CourseEntryState extends State<CourseEntry>
                     setState(() {
                       showSpinner = true;
                     });
-
-                    // const apiKey = "AIzaSyANtTEQ_VAiH9kmwwW3u0OlC19VT7fzvkA";
                     final apiKey = dotenv.env['GEMINI_KEY']!;
                     final model = GenerativeModel(
                         model: 'gemini-1.5-pro', apiKey: apiKey);
