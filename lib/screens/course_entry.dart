@@ -142,6 +142,7 @@ class _CourseEntryState extends State<CourseEntry>
                     setState(() {
                       showSpinner = true;
                     });
+
                     final apiKey = dotenv.env['GEMINI_KEY']!;
                     final model = GenerativeModel(
                         model: 'gemini-1.5-pro', apiKey: apiKey);
@@ -172,6 +173,7 @@ class _CourseEntryState extends State<CourseEntry>
                     } else {
                       print("No content received");
                     }
+
                     setState(() {
                       showSpinner = false;
                     });
