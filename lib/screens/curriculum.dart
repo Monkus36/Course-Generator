@@ -7,18 +7,18 @@
 // import 'package:flutter_dotenv/flutter_dotenv.dart';
 // import 'package:curriculi/screens/course_entry.dart';
 
-// class ContentScreen extends StatefulWidget {
+// class Curriculum extends StatefulWidget {
 //   final String content;
 //   final String courseTitle;
 
-//   const ContentScreen(
+//   const Curriculum(
 //       {super.key, required this.content, required this.courseTitle});
 
 //   @override
-//   State<ContentScreen> createState() => _ContentScreenState();
+//   State<Curriculum> createState() => _CurriculumState();
 // }
 
-// class _ContentScreenState extends State<ContentScreen> {
+// class _CurriculumState extends State<Curriculum> {
 //   List<String> cleanModules = [];
 //   List<String> cleanLessons = [];
 
@@ -257,18 +257,18 @@ import 'package:curriculi/screens/lesson_content.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:curriculi/screens/course_entry.dart';
 
-class ContentScreen extends StatefulWidget {
+class Curriculum extends StatefulWidget {
   final String content;
   final String courseTitle;
 
-  const ContentScreen(
+  const Curriculum(
       {super.key, required this.content, required this.courseTitle});
 
   @override
-  State<ContentScreen> createState() => _ContentScreenState();
+  State<Curriculum> createState() => _CurriculumState();
 }
 
-class _ContentScreenState extends State<ContentScreen> {
+class _CurriculumState extends State<Curriculum> {
   List<String> cleanModules = [];
   List<String> cleanLessons = [];
 

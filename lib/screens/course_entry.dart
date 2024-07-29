@@ -186,7 +186,7 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
-import 'package:curriculi/screens/content.dart';
+import 'package:curriculi/screens/curriculum.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -225,7 +225,7 @@ class _CourseEntryState extends State<CourseEntry>
 
   Future<void> generateCourseContent(String value) async {
     final apiKey = dotenv.env['GEMINI_KEY']!;
-    final model = GenerativeModel(model: 'gemini-1.5-pro', apiKey: apiKey);
+    final model = GenerativeModel(model: 'gemini-1.5-flash', apiKey: apiKey);
     final content = [
       Content.text(
           """Generate a comprehensive curriculum for a course about $value. 
@@ -248,13 +248,13 @@ class _CourseEntryState extends State<CourseEntry>
     courseTitle = value;
   }
 
-  void navigateToContentScreen() {
+  void navigateToCurriculum() {
     if (generatedContent != null && courseTitle != null) {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ContentScreen(
-              content: generatedContent!, courseTitle: courseTitle!),
+          builder: (context) =>
+              Curriculum(content: generatedContent!, courseTitle: courseTitle!),
         ),
       );
     } else {
@@ -327,7 +327,7 @@ class _CourseEntryState extends State<CourseEntry>
                       showSpinner = false;
                     });
 
-                    navigateToContentScreen();
+                    navigateToCurriculum();
                   },
                 ),
               ),
